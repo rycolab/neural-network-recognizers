@@ -1,0 +1,1 @@
+bash scripts/install_python_packages.bash

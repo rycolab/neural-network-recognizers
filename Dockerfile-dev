@@ -1,0 +1,32 @@
+FROM python:3.12.2-bookworm
+# UTF-8 encoding is necessary for printing non-ASCII characters to the
+# terminal.
+ENV LC_ALL C.UTF-8
+# Install Poetry.
+# See https://python-poetry.org/docs/#installing-with-the-official-installer
+RUN POETRY_VERSION=1.8.2 && \
+    apt-get update -y && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+        curl \
+        && \
+    cd /tmp && \
+    curl -sSL https://install.python-poetry.org > install-poetry.py && \
+    POETRY_HOME=/usr/local/poetry python3 install-poetry.py --version $POETRY_VERSION && \
+    rm install-poetry.py && \
+    apt-get purge -y \
+        curl \
+        && \
+    rm -rf /var/lib/apt/lists/*
+# Install less.
+RUN apt-get update -y && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+        less \
+        && \
+    rm -rf /var/lib/apt/lists/*
+ENV PATH /usr/local/poetry/bin:${PATH}
+# Stores Python packages in the local directory.
+# See https://python-poetry.org/docs/configuration/#virtualenvsin-project-boolean
+ENV POETRY_VIRTUALENVS_IN_PROJECT true
+# Add src/ to PYTHONPATH.
+ENV PYTHONPATH /app/src:${PYTHONPATH}
+WORKDIR /app/
