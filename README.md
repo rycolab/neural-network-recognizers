@@ -1,10 +1,10 @@
 # Training Neural Networks as Recognizers of Formal Languages
 
-This repository contains the code for the paper "Training Neural Networks as
-Recognizers of Formal Languages" (Butoi et al., 2024). It includes all of the
-code necessary to reproduce the experiments and figures in the paper, as well
-as a Docker image definition that can be used to replicate the software
-environment it was developed in.
+This repository contains the code for the paper
+["Training Neural Networks as Recognizers of Formal Languages" (Butoi et al., 2025)](https://openreview.net/forum?id=aWLQTbfFgV).
+It includes all of the code necessary to reproduce the experiments and figures
+in the paper, as well as a Docker image definition that can be used to
+replicate the software environment it was developed in.
 
 The FLaRe benchmark, which contains the datasets for all formal languages used
 in our experiments, can be found [here](https://github.com/rycolab/flare).
@@ -12,6 +12,20 @@ in our experiments, can be found [here](https://github.com/rycolab/flare).
 Our experiments our fast enough that they can be run quite quickly even without
 GPUs. It takes only a couple hours or so to run all experiments on a scientific
 computing cluster in CPU mode.
+
+## Citation
+
+```bibtex
+@inproceedings{butoi-etal-2025-training,
+    title = "Training Neural Networks as Recognizers of Formal Languages",
+    author = "Butoi, Alexandra and Khalighinejad, Ghazal and Svete, Anej and Valvoda, Josef and Cotterell, Ryan and DuSell, Brian",
+    booktitle = "The Thirteenth International Conference on Learning Representations",
+    year = "2025",
+    month = apr,
+    address = "Singapore",
+    url = "https://openreview.net/forum?id=aWLQTbfFgV"
+}
+```
 
 ## Directory Structure
 
