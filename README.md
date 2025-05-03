@@ -9,7 +9,7 @@ replicate the software environment it was developed in.
 The FLaRe benchmark, which contains the datasets for all formal languages used
 in our experiments, can be found [here](https://github.com/rycolab/flare).
 
-Our experiments our fast enough that they can be run quite quickly even without
+Our experiments are fast enough that they can be run quite quickly even without
 GPUs. It takes only a couple hours or so to run all experiments on a scientific
 computing cluster in CPU mode.
 
